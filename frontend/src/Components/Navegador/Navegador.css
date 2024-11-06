@@ -1,0 +1,41 @@
+.navbar {
+    height: 100vh;
+    width: 220px;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.navbar a {
+    color: #fff;
+    padding: 15px;
+    text-decoration: none;
+    width: 85%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    border: gray solid 1px;
+    border-radius: 4px;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+/* Clase para el enlace activo */
+.navbar a.active {
+    background-color: #007bff;
+    /* Color de fondo para la ruta activa */
+    color: #fff;
+    font-weight: bold;
+}
+
+.navbar .logos img {
+    width: 180px;
+}

@@ -1,0 +1,109 @@
+.contenedorGeneral h1{
+    font-size: 120px;
+}
+
+.searchInput {
+    width: 95%;
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.2s ease;
+}
+
+.searchInput:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.container {
+    padding: 20px;
+    border: #888 solid 5px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.listContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #aaa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s ease-in-out;
+    border: #218 solid 5px;
+    
+}
+
+.listContainer:hover {
+    transform: scale(1.02);
+    background-color: #fff;
+    color: #000;
+}
+
+.listContainer h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+    flex-grow: 1;
+}
+
+.listContainer button {
+    background-color: #333;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+button:first-child {
+    color: #ff4d4d; 
+}
+
+button:first-child:hover {
+    color: #ff1a1a; 
+}
+
+button:last-child {
+    color: #007bff;
+}
+
+button:last-child:hover {
+    color: #0056b3; 
+}
+
+.editContainer {
+    width: 35%;
+    background-color: #444;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.editContainer h2{
+    margin-top: 0;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.edit:hover{
+    background-color: #1a1;
+}
+
+.delet:hover{
+    background-color: #a11;
+}
