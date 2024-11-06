@@ -60,7 +60,7 @@ const DogList = () => {
             <div className={style.container}>
                 {filteredDogs.map((user) => (
                     <div key={user.id} className={style.listContainer}>
-                        <h3>{user.firstName} {user.lastName}</h3>
+                        <h3>{user.razaName} {user.tiempoVida} {user.origen} {user.peso}</h3>
                         <button className={style.delet} onClick={() => handleDelete(user.id)}>❌</button>
                         <button className={style.edit} onClick={() => handleSelectDog(user)}>✍️</button>
                     </div>

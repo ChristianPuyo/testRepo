@@ -6,26 +6,26 @@ import './DogForm.css'
 
 const DogForm = () =>{
     const {addDog} = useDogStore()
-    const [DogData, setDogData] = useState({
+    const [dogData, setDogData] = useState({
         razaName:"",
         tiempoVida:"",
         origen:"",
         peso:""
     })
 
-    console.log(DogData);
+    console.log(dogData);
 
     const handleInputChange = (e)=>{
         const {name, value} = e.target;
         setDogData({
-            ...DogData,
+            ...dogData,
             [name]: value
         });
     }
 
     const handleSubmit = async(e)=>{
         e.preventDefault();
-        addDog(DogData)
+        addDog(dogData)
         setDogData({
             razaName:"",
             tiempoVida:"",
@@ -47,7 +47,7 @@ const DogForm = () =>{
                         placeholder="Enter raza Name"
                         required
                         name="razaName"
-                        value={DogData.razaName}
+                        value={dogData.razaName}
                         onChange={handleInputChange}
                     />
                     <label>Esperanza de Vida:</label>
@@ -56,7 +56,7 @@ const DogForm = () =>{
                         placeholder="Enter esperanza de vida"
                         required
                         name="tiempoVida"
-                        value={DogData.tiempoVida}
+                        value={dogData.tiempoVida}
                         onChange={handleInputChange}
                     />
                     <label>Origen:</label>
@@ -65,7 +65,7 @@ const DogForm = () =>{
                         placeholder="Enter origen"
                         required
                         name="origen"
-                        value={DogData.origen}
+                        value={dogData.origen}
                         onChange={handleInputChange}
                     />
                     <label>peso:</label>
@@ -74,7 +74,7 @@ const DogForm = () =>{
                         placeholder="Enter peso"
                         required
                         name="peso"
-                        value={DogData.peso}
+                        value={dogData.peso}
                         onChange={handleInputChange}
                     />
                     <button type="submit">Save</button>

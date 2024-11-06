@@ -5,7 +5,7 @@ const HomeComponents = () =>{
     return(
         <div>
             <Navegador />
-            <h1>Hola</h1>
+            <h1>Practica</h1>
         </div>
     )
 }

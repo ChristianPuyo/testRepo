@@ -10,7 +10,7 @@ const DogRouter = Router()
 DogRouter.post('/',async(req, res)=>{
     const {id, razaName, tiempoVida, origen, peso} = req.body
     try{
-        const newDog = await CreateStudentController({id, razaName, tiempoVida, origen, peso})
+        const newDog = await CreateDogsController({id, razaName, tiempoVida, origen, peso})
         res.status(201).json(newDog)
     }catch (error){
         res.status(400).json({error: error.message})
@@ -44,7 +44,7 @@ DogRouter.delete('/:id', async (req, res) =>{
     const { id } = req.params
     try {
         const deteledDog = await deletedDogsByIdController(id)
-        if(!deteledDogs){
+        if(!deteledDog){
             return res.status(404).json({error: "Dog not found"})
         }
         res.status(200).json({message: "Dog deleted successfully"})

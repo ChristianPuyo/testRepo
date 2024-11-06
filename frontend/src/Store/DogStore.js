@@ -7,7 +7,7 @@ const useDogStore = create((set)=>({
         try {
             const response = await axios.post('http://localhost:3001/dog', dog)
             set((state)=>({
-                dog: [...state.dog, response.data]
+                dog: [...state.dogs, response.data]
             }))
         } catch (error) {
             console.log("Error adding dog", error.message);
@@ -16,7 +16,7 @@ const useDogStore = create((set)=>({
     fetchDogs: async ()=>{
         try {
             const response = await axios.get('http://localhost:3001/dog')
-            set({dogs: response.data})
+            set({dogs: response.data})  
         } catch (error) {
             console.log('Error fetching dogs', error.message)
         }
