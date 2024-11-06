@@ -1,0 +1,351 @@
+/* studentList.module.css */
+.pageContainer {
+    padding: 1rem;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 80px;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos hijos horizontalmente */
+}
+
+.title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #2196F3;
+    border-radius: 2px;
+}
+
+/* Contenedor de búsqueda */
+.searchContainer {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%; /* Toma el ancho completo disponible */
+    max-width: 1400px;
+    box-sizing: border-box;
+}
+
+.searchInput {
+    padding: 1rem 1.5rem;
+    border: 2px solid #e1e8ed;
+    border-radius: 12px;
+    font-size: 1rem;
+    width: 100%;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    box-sizing: border-box; /* Añadido para corregir el desbordamiento */
+    max-width: 100%; /* Añadido para asegurar que no se desborde */
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: #2196F3;
+    box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.1);
+    background-color: white;
+}
+
+.resultsCount {
+    color: #6c757d;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Grid de estudiantes */
+.studentsGrid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+    width: 100%; /* Asegura que la grilla tome el ancho completo */
+    max-width: 1400px; /* Mantiene consistencia con los otros contenedores */
+}
+
+/* Tarjeta de estudiante */
+.studentCard {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #e1e8ed;
+}
+
+.studentCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.studentInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.studentName {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Formulario de edición */
+.editForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input {
+    padding: 0.875rem 1rem;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #2196F3;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+/* Grupos de botones */
+.buttonGroup {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+}
+
+.buttonGroup button {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Estilos de botones */
+.saveButton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.saveButton:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.cancelButton {
+    background-color: #f44336;
+    color: white;
+}
+
+.cancelButton:hover {
+    background-color: #e53935;
+    transform: translateY(-2px);
+}
+
+.deleteButton {
+    background-color: #ff4444;
+    color: white;
+}
+
+.deleteButton:hover {
+    background-color: #ff1744;
+    transform: translateY(-2px);
+}
+
+.editButton {
+    background-color: #2196F3;
+    color: white;
+}
+
+.editButton:hover {
+    background-color: #1976d2;
+    transform: translateY(-2px);
+}
+
+/* Mensaje de no resultados */
+.noResults {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem 2rem;
+    background-color: white;
+    border-radius: 12px;
+    color: #6c757d;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 2px dashed #e1e8ed;
+}
+/* Añade estos estilos a tu archivo studentList.module.css */
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.modal input{
+    width: 95%;
+}
+.modal p {
+    margin-bottom: 1.5rem;
+    color: #4a5568;
+    line-height: 1.5;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    font-size: 1.2rem;
+}
+
+.searchInputWrapper {
+    position: relative;
+    flex: 1;
+}
+
+/* Ajusta el padding del searchInput para el icono */
+.searchInput {
+    padding-left: 2.5rem;
+}
+/* Media Queries */
+@media screen and (max-width: 480px) {
+    .pageContainer {
+        padding: 0.75rem;
+        margin-top: 70px;
+    }
+
+    .searchContainer {
+        padding: 1rem;
+    }
+
+    .searchInput {
+        min-width: 0; /* Permite que el input se encoja si es necesario */
+        width: 100%;
+    }
+
+    .buttonGroup {
+        flex-direction: column;
+    }
+
+    .buttonGroup button {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    .studentsGrid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .searchContainer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .searchInput {
+        max-width: 400px;
+    }
+
+    .studentsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .studentsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .studentsGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.studentCard {
+    animation: fadeIn 0.3s ease-out;
+}
