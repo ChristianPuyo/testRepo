@@ -1,0 +1,107 @@
+.fondo_genereral {
+  /* Gradiente de fondo hermoso */
+  background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Mantener la dirección de los hijos apilados verticalmente */
+  align-items: center; /* Centrar horizontalmente */
+  padding: 2rem; /* Espaciado interior */
+  position: relative; /* Permitir que los elementos absolutamente posicionados se alineen en relación a este contenedor */
+}
+
+.listContainer {
+  max-width: 600px;
+  padding: 2rem;
+  background: white; /* Mantener el fondo del contenedor de la lista en blanco */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  overflow: hidden; /* Mantener el contenido dentro de los bordes redondeados */
+  margin-top: 4rem; /* Espacio entre el botón y el contenedor de lista */
+  width: 100%; /* Asegurar que ocupe el 100% del ancho disponible */
+}
+
+.title {
+  text-align: center;
+  color: #34495e;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.backButton {
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem; /* Ajustar el padding */
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  position: absolute; /* Permitir que el botón se coloque en la esquina */
+  top: 2rem; /* Distancia desde el borde superior */
+  left: 2rem; /* Distancia desde el borde izquierdo */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+.backButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada en hover */
+}
+
+.studentCard {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s, background 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.4s ease-out;
+}
+
+.studentCard:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(to right, #ffffff, #f0f4f8);
+}
+
+.studentName {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+@keyframes slideIn {
+  from {
+      opacity: 0;
+      transform: translateX(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .listContainer {
+      margin: 1rem;
+      padding: 1rem;
+  }
+
+  .title {
+      font-size: 2rem;
+  }
+
+  .studentCard {
+      padding: 1rem;
+  }
+
+  .studentName {
+      font-size: 1rem;
+  }
+}
