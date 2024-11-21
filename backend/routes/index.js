@@ -3,7 +3,7 @@ const {studentRouter} = require('../routes/DogsRoutes')
 
 const router  = Router()
 
-router.use('/dog',studentRouter)
+router.use('/dogs',studentRouter)
 
 
 module.exports = router;

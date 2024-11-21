@@ -4,14 +4,14 @@ const {createStudentController,
        updateStudentByIdController,
        deleteStudentByIdController
 
-} = require('../controllers/dogsControllers')
+} = require('../controllers/dogscontollers')
 
 const studentRouter = Router()
 
 studentRouter.post("/", async(req, res)=>{
-    const {id, nomperro, raza,vida} = req.body
+    const {id, nomperro, raza,vida,peso} = req.body
     try {
-        const newStudent = await createStudentController({id, nomperro, raza,vida})
+        const newStudent = await createStudentController({id, nomperro, raza,vida,peso})
         res.status(201).json(newStudent)
     } catch (error) {
         res.status(400).json({error: error.message})

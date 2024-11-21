@@ -1,6 +1,6 @@
 const sequelize = require('../db')
 
-const Student = require('./dog') 
+const Student = require('./dogs') 
 
 const db ={
     sequelize,

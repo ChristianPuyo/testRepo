@@ -1,7 +1,7 @@
 const {DataTypes} = require('sequelize')
 const sequelize = require('../db')
 
-const Student = sequelize.define('dog',{
+const Student = sequelize.define('dogs',{
     id:{
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -16,6 +16,10 @@ const Student = sequelize.define('dog',{
         allowNull: false
     },
     vida: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    peso: {
         type: DataTypes.INTEGER,
         allowNull: false
     }

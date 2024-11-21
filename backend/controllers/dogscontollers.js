@@ -1,15 +1,14 @@
 const Student = require('../models/dogs')
 
-const createStudentController =  async ({id, nomperro, raza,vida}) => {
+const createStudentController =  async ({id, nomperro, raza,vida,peso}) => {
     try {
-        const newStudent = await Student.create({id, nomperro, raza,vida})
+        const newStudent = await Student.create({id, nomperro, raza,vida,peso})
         return newStudent
     } catch (error) {
         throw new Error(error.message)
     }
 }
 
-//get all students
 const getAllStudentsController = async () => {
     try {
         const students =  await Student.findAll()
